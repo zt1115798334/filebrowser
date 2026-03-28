@@ -3,6 +3,7 @@ services:
     image: filebrowser/filebrowser:latest
     container_name: filebrowser
     restart: unless-stopped
+    user: "${UID}:${GID}"
     ports:
       - "8080:80"
     volumes:
