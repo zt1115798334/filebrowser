@@ -1,0 +1,14 @@
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:latest
+    container_name: filebrowser
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./data:/srv              # 你要管理的目录
+      - ./filebrowser.db:/database.db
+      - ./settings.json:/config/settings.json
+    environment:
+      - PUID=1000
+      - PGID=1000
