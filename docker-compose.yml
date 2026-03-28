@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./data:/srv              # 你要管理的目录
+      - /data/home-theater:/data
       - ./filebrowser.db:/database.db
       - ./settings.json:/config/settings.json
     environment:
