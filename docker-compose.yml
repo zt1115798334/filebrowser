@@ -7,8 +7,7 @@ services:
       - "8080:80"
     volumes:
       - /data/home-theater:/data
-      - ./filebrowser.db:/database.db
-      - ./settings.json:/config/settings.json
+      - ${PWD}/config:/config
     environment:
       - PUID=1000
       - PGID=1000
